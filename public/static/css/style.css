@@ -666,20 +666,35 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .banner-text {
-  flex: 1 1;
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%); */
+  flex: 1;
 }
 
 .banner-image {
-  display: flex;
+  flex: 0 0 30%;
+  max-width: 30rem;
   align-items: center;
-  justify-content: center;
+  margin: 0 var(--gutter-huge);
 }
 
 .banner-image img {
-  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-width: 4px;
+  border-color: rgba(255, 255, 255, 1);
+  border-radius: 9999px;
+}
+
+@media (max-width: 900px) {
+  .home-banner {
+    align-items: initial;
+    flex-direction: column;
+  }
+
+  .banner-image {
+    margin: 0 auto;
+    margin-bottom: var(--gutter-medium);
+  }
 }
 
 /* Footer */
