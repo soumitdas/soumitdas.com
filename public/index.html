@@ -14,6 +14,20 @@
       content="Soumit Das, Javascript, React, Vue, NodeJS, Express, MongoDB, PostgreSQL, Git, Python, TypeScript, GraphQL, CI/CD"
     />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="font"
+      href="./static/fonts/HKGrotesk-Regular.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="./static/fonts/Jost-Regular.ttf"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./static/css/style.css" />
   </head>
   <body>
@@ -37,13 +51,13 @@
         </nav>
         <div class="home-banner">
           <div class="banner-image">
-            <img src="./static/images/soumitdas.jpg" alt="SOumit Das" />
+            <img src="./static/images/soumitdas_transp.png" alt="Soumit Das" />
           </div>
           <div class="banner-text">
             <h3>Hi 👋</h3>
             <h1 class="heading-primary">I'm Soumit Das</h1>
             <p class="subtitle">Fullstack Javascript Developer</p>
-            <a href="#contact" class="button button-orange">Contact</a>
+            <a href="#contact" class="button button-orange">Contact me</a>
           </div>
         </div>
       </div>
@@ -222,6 +236,45 @@
                 </a>
                 <a
                   href="https://github.com/soumitdas/shortlink"
+                  title="View Source Code"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="./static/images/github.svg"
+                    class="project-source"
+                    alt="GitHub"
+                  />
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <figure class="project-image">
+              <img
+                src="https://i.imgur.com/CKouyd8.webp"
+                alt="Localnote screenshot"
+              />
+            </figure>
+            <div class="project-text">
+              <h3>Local Note</h3>
+              <p>A Note-taking app built using Vanilla JS (no framework)</p>
+              <div class="tags">
+                <span class="tag tag-small tag-javascript">#javascript</span>
+                <span class="tag tag-small tag-purple">#history-routing</span>
+                <span class="tag tag-small tag-danger">#no-framework</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://localnote.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-text"
+                >
+                  Live Demo <span>&rarr;</span>
+                </a>
+                <a
+                  href="https://github.com/soumitdas/localnote"
                   title="View Source Code"
                   target="_blank"
                   rel="noopener noreferrer"
