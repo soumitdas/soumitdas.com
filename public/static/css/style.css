@@ -562,6 +562,11 @@ body:not(.user-is-tabbing) a:focus {
   color: #12181a;
 }
 
+.tag-danger {
+  background: hsl(348, 100%, 61%);
+  color: #fff;
+}
+
 /* Blog cards */
 .blogs-list {
   display: flex;
@@ -672,16 +677,19 @@ body:not(.user-is-tabbing) a:focus {
 .banner-image {
   flex: 0 0 30%;
   max-width: 30rem;
+  max-height: 30rem;
   align-items: center;
   margin: 0 var(--gutter-huge);
+  border-radius: 9999px;
+  background: var(--gradient);
 }
 
 .banner-image img {
   display: block;
   margin: 0 auto;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-width: 4px;
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1); */
   border-radius: 9999px;
 }
 
