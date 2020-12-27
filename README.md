@@ -28,6 +28,6 @@ This project is using HTML and CSS only. Just update the HTML according to your 
 
 Used various resources to create this website. Some of thems are:
 
-- [Portfolio Template]() by [nisarhassan12](https://github.com/nisarhassan12)
+- [Portfolio Template](https://github.com/nisarhassan12/portfolio-template) by [nisarhassan12](https://github.com/nisarhassan12)
 - [fireship.io](http://fireship.io/)
 - [CSS Tricks](http://css-tricks.com/)
