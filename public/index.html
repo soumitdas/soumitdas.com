@@ -8,7 +8,7 @@
       name="description"
       content="An Engineering undergraduate student passionate about web technologies, worked with React, Vue, NodeJS, Express, MongoDB, PostgreSQL, Git and also familiar with Python, TypeScript, GraphQL, CI/CD"
     />
-    <meta property="og:image" content="./static/images/soumitdas.jpg" />
+    <meta property="og:image" content="https://www.soumitdas.com/static/images/soumitdas.jpg" />
     <meta
       name="keywords"
       content="Soumit Das, Javascript, React, Vue, NodeJS, Express, MongoDB, PostgreSQL, Git, Python, TypeScript, GraphQL, CI/CD"
@@ -29,6 +29,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115210819-5"></script>
+    <script>
+      if (window.location.hostname !== "localhost") {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115210819-5');
+      }
+    </script>
   </head>
   <body>
     <header class="header">
