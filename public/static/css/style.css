@@ -590,7 +590,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .card {
-  height: 500px;
+  height: 550px;
   width: 400px;
   min-width: 350px;
   padding: var(--gutter-normal);
@@ -604,6 +604,13 @@ body:not(.user-is-tabbing) a:focus {
   scroll-snap-align: start;
   clear: both;
   position: relative;
+}
+
+@media (max-width: 1000px) {
+  .card {
+    height: 450px;
+    width: 300px;
+  }
 }
 
 .card .buttons {
@@ -649,6 +656,10 @@ body:not(.user-is-tabbing) a:focus {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.card-header h3 span {
+  -webkit-text-fill-color: initial;
 }
 
 .card-content {
