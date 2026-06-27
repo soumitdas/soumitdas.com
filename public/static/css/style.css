@@ -1107,6 +1107,12 @@ body:not(.user-is-tabbing) a:focus {
   color: var(--orange);
 }
 
+.blog-comments {
+  margin-top: var(--gutter-medium);
+  padding-top: var(--gutter-normal);
+  border-top: var(--border-light);
+}
+
 @media (max-width: 600px) {
   .blog-article-header h1 {
     font-size: var(--font-size-medium-1);
