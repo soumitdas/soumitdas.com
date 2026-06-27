@@ -20,6 +20,20 @@ git clone https://github.com/soumitdas/soumitdas.com.git
 
 This project is using HTML and CSS only. Just update the HTML according to your needs.
 
+## Blog workflow
+
+Blog posts are static HTML files under `public/blog/<slug>/index.html`. No build step required — deploy root is `public/`.
+
+- Blog list: `public/blog/index.html`
+- Individual posts: `public/blog/<slug>/index.html`
+
+To add a new post:
+1. Create `public/blog/<slug>/index.html` using an existing post as template.
+2. Add a listing entry in `public/blog/index.html`.
+3. Optionally link from the homepage `public/index.html` blog section.
+
+**Future SSG migration**: A static site generator can replace the manual HTML files while keeping `/blog/<slug>/` URLs intact — the directory-per-post structure is forward-compatible.
+
 ## License
 
 [MIT licensed](http://opensource.org/licenses/MIT)
