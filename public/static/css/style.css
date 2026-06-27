@@ -58,6 +58,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scroll-padding-top: 2.5rem;
 }
 
 @media (max-width: 1000px) {
@@ -662,6 +663,11 @@ body:not(.user-is-tabbing) a:focus {
   -webkit-text-fill-color: initial;
 }
 
+.card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .card-content {
   margin-top: 1rem;
   margin-bottom: auto;
@@ -746,4 +752,300 @@ body:not(.user-is-tabbing) a:focus {
   height: 2.5rem;
   width: 84px;
   transform: translateY(3px);
+}
+
+/* Blog list page */
+.page-banner {
+  padding: var(--gutter-medium) 0;
+  border-bottom: var(--border-light);
+}
+
+.page-banner .heading-primary {
+  font-size: var(--font-size-large);
+}
+
+.page-banner .subtitle {
+  font-size: var(--font-size-normal);
+  color: var(--light-dark);
+  margin-top: var(--gutter-extra-small);
+}
+
+.blog-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-normal);
+}
+
+.blog-post-item {
+  padding: var(--gutter-normal);
+  border-radius: 16px;
+  background: var(--black);
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.2s;
+}
+
+.blog-post-item:hover {
+  transform: translateY(-0.5rem);
+}
+
+.blog-post-meta {
+  font-size: 14px;
+  color: var(--light-dark);
+  margin: 0 0 0.5rem;
+}
+
+.blog-post-title {
+  text-decoration: none;
+  color: var(--white);
+  display: inline-block;
+}
+
+.blog-post-title:hover {
+  background: var(--gradient);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.blog-post-excerpt {
+  color: var(--white-1);
+  margin: var(--gutter-small-1) 0;
+}
+
+.blog-post-item .link-text {
+  margin-top: var(--gutter-small-1);
+  display: inline-block;
+}
+
+/* Blog article / detail page */
+.container-narrow {
+  max-width: var(--container-normal-width);
+  margin: 0 auto;
+}
+
+.blog-article {
+  padding: var(--gutter-medium) 0;
+}
+
+@media (max-width: 600px) {
+  .blog-article {
+    padding: var(--gutter-normal) 0;
+  }
+}
+
+.blog-article-header {
+  margin-bottom: var(--gutter-medium);
+  border-bottom: var(--border-light);
+  padding-bottom: var(--gutter-normal);
+}
+
+/* Table of Contents */
+.toc {
+  margin-bottom: var(--gutter-normal);
+  padding: 1.6rem 2rem;
+  border-radius: 12px;
+  background: #1f1b29;
+  border: var(--border-light);
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+  margin: 0;
+  padding: 0;
+}
+
+.toc ol li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.toc ol li::before {
+  counter-increment: toc;
+  content: counter(toc, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: var(--light-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.toc li:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--light-dark);
+  font-family: var(--font);
+  font-size: 1.6rem;
+  line-height: 1.4;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.toc a:hover,
+.toc a:focus {
+  color: var(--white);
+  border-bottom-color: var(--orange);
+}
+
+.toc-desktop {
+  display: none;
+}
+
+.toc-mobile {
+  display: block;
+}
+
+.toc-mobile summary {
+  cursor: pointer;
+  color: var(--white);
+  font-size: var(--font-size-normal);
+  font-weight: 400;
+}
+
+.toc-mobile summary::-webkit-details-marker {
+  color: var(--orange);
+}
+
+@media (min-width: 1100px) {
+  .blog-article .container-narrow {
+    max-width: calc(var(--container-normal-width) + 24rem);
+  }
+
+  .blog-article-layout {
+    display: grid;
+    grid-template-columns: 18rem minmax(0, var(--container-normal-width));
+    column-gap: 6rem;
+    align-items: start;
+  }
+
+  .blog-article-header {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .blog-article-content {
+    grid-column: 2;
+    display: block;
+  }
+
+  .blog-article-content > h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .toc-desktop {
+    display: block;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    position: sticky;
+    width: 18rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    top: 2rem;
+  }
+
+  .toc-desktop::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: var(--border-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .toc-desktop ol {
+    padding-left: 1.6rem;
+  }
+
+  .toc-desktop a {
+    display: block;
+  }
+
+  .toc-mobile {
+    display: none;
+  }
+}
+
+.blog-article-header h1 {
+  font-size: var(--font-size-large);
+  margin-top: var(--gutter-small);
+}
+
+.blog-article-content h2 {
+  font-size: var(--font-size-medium-1);
+  margin-top: var(--gutter-medium);
+  margin-bottom: var(--gutter-small);
+  scroll-margin-top: 3rem;
+}
+
+.blog-article-content h2::after {
+  width: 6rem;
+}
+
+.blog-article-content h2:target {
+  color: var(--orange);
+}
+
+.blog-article-content p {
+  margin: var(--gutter-small-1) 0;
+  line-height: var(--line-height-normal);
+}
+
+.blog-article-content ul,
+.blog-article-content ol {
+  margin: var(--gutter-small-1) 0;
+  padding-left: var(--gutter-normal);
+}
+
+.blog-article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-article-content pre {
+  background: #1a1a2e;
+  border-radius: 8px;
+  padding: var(--gutter-normal);
+  overflow-x: auto;
+  margin: var(--gutter-small-1) 0;
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+}
+
+.blog-article-content code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", monospace;
+  font-size: 0.9em;
+}
+
+.blog-article-content p code {
+  background: #1a1a2e;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.blog-article-footer-note {
+  margin-top: var(--gutter-medium);
+  padding-top: var(--gutter-normal);
+  border-top: var(--border-light);
+  font-size: var(--font-size-small);
+  color: var(--light-dark);
+}
+
+.blog-article-footer-note a {
+  color: var(--orange);
+}
+
+@media (max-width: 600px) {
+  .blog-article-header h1 {
+    font-size: var(--font-size-medium-1);
+  }
 }
