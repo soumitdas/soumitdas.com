@@ -788,6 +788,41 @@ body:not(.user-is-tabbing) a:focus {
   transform: translateY(-0.5rem);
 }
 
+.blog-post-preview {
+  margin-top: var(--gutter-small-1);
+}
+
+@media (min-width: 700px) {
+  .blog-post-preview {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gutter-normal);
+  }
+}
+
+.blog-post-image {
+  margin-bottom: var(--gutter-normal);
+}
+
+@media (min-width: 700px) {
+  .blog-post-image {
+    flex: 0 0 24rem;
+    margin-bottom: 0;
+  }
+}
+
+.blog-post-image img,
+.blog-article-image img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.blog-post-image img {
+  aspect-ratio: 16 / 10;
+}
+
 .blog-post-meta {
   font-size: 14px;
   color: var(--light-dark);
@@ -810,12 +845,18 @@ body:not(.user-is-tabbing) a:focus {
 
 .blog-post-excerpt {
   color: var(--white-1);
-  margin: var(--gutter-small-1) 0;
+  margin: 0 0 var(--gutter-small-1);
 }
 
 .blog-post-item .link-text {
   margin-top: var(--gutter-small-1);
   display: inline-block;
+}
+
+@media (min-width: 700px) {
+  .blog-post-item .link-text {
+    margin-left: calc(24rem + var(--gutter-normal));
+  }
 }
 
 /* Blog article / detail page */
@@ -857,17 +898,17 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .toc ol li {
-  position: relative;
-  padding-left: 2rem;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  column-gap: 0.8rem;
+  align-items: baseline;
 }
 
 .toc ol li::before {
   counter-increment: toc;
   content: counter(toc, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 0;
   font-size: 1.2rem;
+  line-height: 1.4;
   color: var(--light-dark);
   font-variant-numeric: tabular-nums;
 }
@@ -877,6 +918,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .toc a {
+  min-width: 0;
   text-decoration: none;
   color: var(--light-dark);
   font-family: var(--font);
@@ -928,8 +970,13 @@ body:not(.user-is-tabbing) a:focus {
     max-width: none;
   }
 
+  .blog-article-cover {
+    grid-column: 1 / -1;
+  }
+
   .blog-article-content {
     grid-column: 2;
+    grid-row: 3;
     display: block;
   }
 
@@ -940,7 +987,7 @@ body:not(.user-is-tabbing) a:focus {
   .toc-desktop {
     display: block;
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     align-self: start;
     position: sticky;
     width: 18rem;
@@ -979,6 +1026,14 @@ body:not(.user-is-tabbing) a:focus {
 .blog-article-header h1 {
   font-size: var(--font-size-large);
   margin-top: var(--gutter-small);
+}
+
+.blog-article-image {
+  margin: var(--gutter-normal) 0;
+}
+
+.blog-article-cover {
+  margin: 0 0 var(--gutter-medium);
 }
 
 .blog-article-content h2 {
