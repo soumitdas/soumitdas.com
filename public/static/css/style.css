@@ -870,6 +870,14 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media (max-width: 600px) {
+  section {
+    padding: var(--gutter-medium) 0;
+  }
+
+  .page-banner {
+    padding: var(--gutter-normal) 0;
+  }
+
   .blog-article {
     padding: var(--gutter-normal) 0;
   }
@@ -1004,7 +1012,7 @@ body:not(.user-is-tabbing) a:focus {
     display: block;
     width: 1px;
     height: 100%;
-    background: var(--border-light);
+    background-color: rgb(36, 35, 35);
     position: absolute;
     left: 0;
     top: 0;
